@@ -1,0 +1,132 @@
+[
+    {
+        "start": "Stuttgart (STR)",
+        "ziel": "Frankfurt (FRA)",
+        "stops": 0,
+        "flugdauer": "1h 10m",
+        "preis": {
+            "business": "350 EUR",
+            "economy": "150 EUR"
+        },
+        "terminal": "T1",
+        "startzeit": "08:00",
+        "ankunftszeit": "09:10"
+    },
+    {
+        "start": "Stuttgart (STR)",
+        "ziel": "Berlin (BER)",
+        "stops": 0,
+        "flugdauer": "1h 25m",
+        "preis": {
+            "business": "400 EUR",
+            "economy": "180 EUR"
+        },
+        "terminal": "T2",
+        "startzeit": "09:30",
+        "ankunftszeit": "10:55"
+    },
+    {
+        "start": "Stuttgart (STR)",
+        "ziel": "München (MUC)",
+        "stops": 0,
+        "flugdauer": "1h 05m",
+        "preis": {
+            "business": "370 EUR",
+            "economy": "160 EUR"
+        },
+        "terminal": "T1",
+        "startzeit": "11:00",
+        "ankunftszeit": "12:05"
+    },
+    {
+        "start": "Stuttgart (STR)",
+        "ziel": "Hamburg (HAM)",
+        "stops": 1,
+        "flugdauer": "2h 45m",
+        "preis": {
+            "business": "450 EUR",
+            "economy": "200 EUR"
+        },
+        "terminal": "T3",
+        "startzeit": "12:30",
+        "ankunftszeit": "15:15"
+    },
+    {
+        "start": "Stuttgart (STR)",
+        "ziel": "Düsseldorf (DUS)",
+        "stops": 0,
+        "flugdauer": "1h 20m",
+        "preis": {
+            "business": "380 EUR",
+            "economy": "170 EUR"
+        },
+        "terminal": "T1",
+        "startzeit": "15:30",
+        "ankunftszeit": "16:50"
+    },
+    {
+        "start": "Stuttgart (STR)",
+        "ziel": "Zürich (ZRH)",
+        "stops": 0,
+        "flugdauer": "1h 10m",
+        "preis": {
+            "business": "390 EUR",
+            "economy": "180 EUR"
+        },
+        "terminal": "T2",
+        "startzeit": "17:00",
+        "ankunftszeit": "18:10"
+    },
+    {
+        "start": "Stuttgart (STR)",
+        "ziel": "Wien (VIE)",
+        "stops": 1,
+        "flugdauer": "2h 15m",
+        "preis": {
+            "business": "420 EUR",
+            "economy": "190 EUR"
+        },
+        "terminal": "T1",
+        "startzeit": "18:30",
+        "ankunftszeit": "20:45"
+    },
+    {
+        "start": "Stuttgart (STR)",
+        "ziel": "Paris (CDG)",
+        "stops": 0,
+        "flugdauer": "1h 30m",
+        "preis": {
+            "business": "430 EUR",
+            "economy": "200 EUR"
+        },
+        "terminal": "T3",
+        "startzeit": "21:00",
+        "ankunftszeit": "22:30"
+    },
+    {
+        "start": "Stuttgart (STR)",
+        "ziel": "Amsterdam (AMS)",
+        "stops": 0,
+        "flugdauer": "1h 35m",
+        "preis": {
+            "business": "440 EUR",
+            "economy": "210 EUR"
+        },
+        "terminal": "T2",
+        "startzeit": "22:45",
+        "ankunftszeit": "00:20"
+    },
+    {
+        "start": "Stuttgart (STR)",
+        "ziel": "Madrid (MAD)",
+        "stops": 1,
+        "flugdauer": "3h 15m",
+        "preis": {
+            "business": "500 EUR",
+            "economy": "250 EUR"
+        },
+        "terminal": "T1",
+        "startzeit": "06:00",
+        "ankunftszeit": "09:15"
+    }
+]

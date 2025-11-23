@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      href="./resources/favicon.jpg"
+      type="image/x-icon"
+    />
+    <title>DBE Fly</title>
+  </head>
+  <body>
+    <!-- Navigationsleiste -->
+    <div class="navigation">
+      <div class="box-content">
+        <div class="logo">
+          <a href="#">
+            <img src="./resources/logo-green.svg" alt="Logo DBE Academy" />
+          </a>
+        </div>
+        <div class="navi-block">
+          <nav>
+            <li><a href="#">Buchen & Vorbereiten</a></li>
+            <li><a href="#">Meine Buchungen</a></li>
+            <li><a href="#">DBE Fly entdecken</a></li>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <!-- Keyvisual mit Tab Element -->
+    <div class="header">
+      <div class="box-content">
+        <div class="tab-fly">
+          <div class="tabs">
+            <input type="radio" name="tab-group" id="tab1" checked />
+            <input type="radio" name="tab-group" id="tab2" />
+            <input type="radio" name="tab-group" id="tab3" />
+            <input type="radio" name="tab-group" id="tab4" />
+
+            <div class="tab-labels">
+              <label for="tab1">
+                <img src="./resources/airplane-svgrepo-com.svg" />
+                <p>Flüge</p>
+              </label>
+              <label for="tab2">
+                <img src="./resources/hotel-flug.svg" />
+                <p>Flug & Hotel</p>
+              </label>
+              <label for="tab3">
+                <img src="./resources/car-svgrepo-com.svg" />
+                <p>Mietwagen</p>
+              </label>
+              <label for="tab4">
+                <img src="./resources/bed-svgrepo-com (1).svg" />
+                <p>Hotel</p>
+              </label>
+            </div>
+
+            <div class="tabs-contents">
+              <!-- Tab Container 1 -->
+              <div id="tab-content1" class="content">
+                <div class="inner-filter">
+                  <!-- Top Filter -->
+                  <div class="top-filter">
+                    <!-- Hin- und Rückflug -->
+                    <div class="flug">
+                      <div class="custom-select">
+                        <button class="select-label">
+                          <p>Hin- und Rückflug</p>
+                          <img
+                            class="arrow"
+                            src="./resources/chevron-down-svgrepo-com.svg"
+                            width="24px"
+                            height="24px"
+                          />
+                        </button>
+                        <ul class="select-options">
+                          <li>Nix da</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <!-- Filter Anzahl Reisende -->
+                    <div class="filter">
+                      <a href="" title="Nix da">
+                        <img src="./resources/configure-svgrepo-com.svg" />
+                        <p>Economy, 1 Reisende(r)</p>
+                      </a>
+                    </div>
+                    <!-- Checkbox Nonstop -->
+                    <div class="checkbox">
+                      <input
+                        type="checkbox"
+                        id="nonstop"
+                        name="flug-nonstop"
+                        value="ja"
+                      />
+                      <label for="nonstop"><p>Nur Nonstop Flüge</p></label>
+                    </div>
+                  </div>
+
+                  <!-- Untere Filtermöglichkeiten -->
+                  <div class="bottom-filter">
+                    <!-- Von- und Nach Switch Buttons -->
+                    <div class="von-nach-switch">
+                      <div>
+                        <label for="from">Von</label>
+                        <input
+                          type="text"
+                          id="from"
+                          placeholder="Startort"
+                          value=""
+                        />
+                      </div>
+                      <div>
+                        <button type="button" id="switch-btn">⇆</button>
+                      </div>
+                      <div>
+                        <label for="to">Nach</label>
+                        <input
+                          type="text"
+                          id="to"
+                          placeholder="Zielort"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                    <!-- Abflug / Rückflug -->
+                    <div class="datum">
+                      <div>
+                        <label for="ablug">Abflug</label>
+                        <input
+                          type="datetime-local"
+                          name=""
+                          id="abflug"
+                          placeholder="Abflug"
+                        />
+                      </div>
+                      <div>
+                        <label for="rueckflug">Rückflug</label>
+                        <input
+                          type="datetime-local"
+                          name=""
+                          id="rueckflug"
+                          placeholder="Rückflug"
+                        />
+                      </div>
+                    </div>
+                    <!-- Button Suche -->
+                    <div class="btn-suche">
+                      <input id="search" type="submit" value="Suchen" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Tab Container 2 -->
+              <div id="tab-content2" class="content">
+                <div class="inner-filter">
+                  <div class="bottom-filter">
+                    <!-- Von / Nach -->
+                    <div class="von-nach-switch">
+                      <div>
+                        <label for="from">Von</label>
+                        <input
+                          type="text"
+                          id="from"
+                          placeholder="Startort"
+                          value=""
+                        />
+                      </div>
+                      <div>
+                        <button type="button" id="switch-btn">⇆</button>
+                      </div>
+                      <div>
+                        <label for="to">Nach</label>
+                        <input
+                          type="text"
+                          id="to"
+                          placeholder="Zielort"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                    <!-- Abflug / Rückflug -->
+                    <div class="datum">
+                      <div>
+                        <label for="ablug">Abflug</label>
+                        <input
+                          type="datetime-local"
+                          name=""
+                          id="abflug"
+                          placeholder="Abflug"
+                        />
+                      </div>
+                      <div>
+                        <label for="rueckflug">Rückflug</label>
+                        <input
+                          type="datetime-local"
+                          name=""
+                          id="rueckflug"
+                          placeholder="Rückflug"
+                        />
+                      </div>
+                    </div>
+                    <div class="top-filter">
+                      <!-- Select Reisedauer -->
+                      <div class="reisedauer flug">
+                        <div class="custom-select">
+                          <button class="select-label">
+                            <p>Reisedauer</p>
+                            <img
+                              class="arrow"
+                              src="./resources/chevron-down-svgrepo-com.svg"
+                              width="24px"
+                              height="24px"
+                            />
+                          </button>
+                          <ul class="select-options">
+                            <li>exakt wie angegeben</li>
+                            <li>bis 2 Tage vorher / nachher</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Anzahl Reisende -->
+                    <div class="anzahl-reisende">
+                      <label for="traveler">Reisende</label>
+                      <input
+                        type="number"
+                        id="traveler"
+                        name="traveler"
+                        value="1"
+                        min="1"
+                        max="10"
+                      />
+                    </div>
+                    <!-- Kinder -->
+                    <div class="top-filter">
+                      <div class="filter">
+                        <a href="" title="Nix da">
+                          <img src="./resources/plus-large-svgrepo-com.svg" />
+                          <p>Reisen mit Kindern (bis 16 Jahre)</p>
+                        </a>
+                      </div>
+                    </div>
+                    <!-- Button Suche -->
+                    <div class="btn-suche">
+                      <input type="submit" value="Reise suchen" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Tab Container 3 -->
+              <div id="tab-content3" class="content">
+                <div class="inner-filter">
+                  <!-- Reihe 1 -->
+                  <div class="reihe1">
+                    <div class="top-filter">
+                      <!-- Mietwagen / Flughafentransfer -->
+                      <div class="radio-miet-flug">
+                        <div>
+                          <input
+                            type="radio"
+                            id="miet"
+                            name="option"
+                            value="auto"
+                            checked
+                          />
+
+                          <label for="miet">Mietwagen</label>
+                          <input
+                            type="radio"
+                            id="flug"
+                            name="option"
+                            value="transfer"
+                          />
+                          <label for="flug">Flughafentransfer</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Reihe 2 -->
+                  <div class="reihe2">
+                    <div class="bottom-filter">
+                      <!-- Anmietstation -->
+                      <input
+                        type="text"
+                        name=""
+                        id=""
+                        placeholder="Anmietstation"
+                      />
+
+                      <div class="datum">
+                        <div>
+                          <label for="anreise">Anreisedatum</label>
+                          <input
+                            type="datetime-local"
+                            name=""
+                            id="anreise"
+                            placeholder="Anreise"
+                          />
+                        </div>
+                        <div>
+                          <label for="anreise-zeit">Uhrzeit</label>
+                          <input
+                            type="time"
+                            name=""
+                            id="anreise-zeit"
+                            placeholder="Anreise"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <br />
+                    <div class="reihe3">
+                      <div class="bottom-filter">
+                        <!-- Rückgabestation -->
+                        <input
+                          type="text"
+                          name=""
+                          id=""
+                          placeholder="Rückgabestation"
+                        />
+
+                        <div class="datum">
+                          <div>
+                            <label for="rueck">Rückgabedatum</label>
+                            <input
+                              type="datetime-local"
+                              name=""
+                              id="rueck"
+                              placeholder="Rückgabe"
+                            />
+                          </div>
+                          <div>
+                            <label for="rueck-zeit">Uhrzeit</label>
+                            <input
+                              type="time"
+                              name=""
+                              id="rueck-zeit"
+                              placeholder="Rückgabe-Zeit"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="reihe3">
+                    <!-- Suchoptionen -->
+                    <div class="top-filter">
+                      <div class="filter">
+                        <a href="" title="Nix da">
+                          <img src="./resources/arrow-right-svgrepo-com.svg" />
+                          <p>Erweiterte Suchoptionen</p>
+                        </a>
+                      </div>
+                    </div>
+
+                    <div class="bottom-filter">
+                      <!-- Mietwagen Suche -->
+                      <div class="btn-suche">
+                        <input type="submit" value="Mietwagen suchen" />
+                      </div>
+                    </div>
+                    <p id="info">Mindestens 500 Miles & More pro Anreisetag.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tab Container 4 -->
+              <div id="tab-content4" class="content">
+                <div class="inner-filter">
+                  <!-- Hotelziel -->
+                  <div class="reihe2">
+                    <div class="bottom-filter">
+                      <!-- Zielort -->
+                      <input type="text" name="" id="" placeholder="Zielort" />
+
+                      <div class="datum">
+                        <div>
+                          <label for="anreise">Anreisedatum</label>
+                          <input
+                            type="datetime-local"
+                            name=""
+                            id="anreise"
+                            placeholder="Anreise"
+                          />
+                        </div>
+                        <div>
+                          <label for="anreise">Abreisedatum</label>
+                          <input
+                            type="datetime-local"
+                            name=""
+                            id="abreise"
+                            placeholder="Abreise"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="reihe3">
+                    <p id="info">
+                      Hotel-Buchungen schließen Sie direkt mit unserem Partner
+                      hotels.com von der SWISS Flugbuchung ab.
+                    </p>
+
+                    <div class="bottom-filter">
+                      <!-- Mietwagen Suche -->
+                      <div class="btn-suche">
+                        <input  type="submit" value="Hotelsuche" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Inhaltsbereich -->
+    <main>
+      <div class="box-content">
+        <section id="flugDaten">
+          
+        </section>
+        <section>
+          <article>
+            <div class="article-img">
+              <img
+                src="./resources/rayyu-maldives-xPsFXsbXJRg-unsplash.jpg"
+                alt="Malediven Vogelperspektive"
+              />
+            </div>
+            <div class="teaser">
+              <p class="tagline">Flugplan 2025</p>
+              <h3>Entdecken Sie unsere neuen Destinationen</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Suscipit recusandae deserunt velit itaque quisquam omnis
+                possimus reprehenderit ducimus, alias exercitationem vel dolorem
+                amet quod ipsa nobis laborum vero, necessitatibus magnam?
+              </p>
+              <input
+                class="btn-mehr"
+                type="button"
+                value="mehr erfahren &nbsp;→"
+              />
+            </div>
+          </article>
+          <article>
+            <div class="article-img">
+              <img
+                src="./resources/atlas-green-hRRjixxRgfQ-unsplash.jpg"
+                alt="Mann und Kamel"
+              />
+            </div>
+            <div class="teaser">
+              <p class="tagline">DBE Travel Briefing</p>
+              <h3>Profitieren Sie vom Reiseleitfaden mit nützlichen Tipps.</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Suscipit recusandae deserunt velit itaque quisquam omnis
+                possimus reprehenderit ducimus.
+              </p>
+              <input
+                class="btn-mehr"
+                type="button"
+                value="mehr erfahren &nbsp;→"
+              />
+            </div>
+          </article>
+        </section>
+      </div>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>

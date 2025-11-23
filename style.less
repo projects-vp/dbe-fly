@@ -1,0 +1,823 @@
+* {
+  box-sizing: border-box;
+}
+
+/* Variablen ___________________________________________________ */
+
+@primary-color: #1eb1b1;
+@text-color: #6b6760;
+@text-color-light: #88847d;
+@btn-color: #019788;
+@btn-hover-color: #027c70;
+@headline-color: #201c1c;
+@light: #ffffff;
+@transition: 0.3s ease-in-out;
+
+.icon-label() {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 5px;
+  + p {
+    margin: 0;
+  }
+}
+
+.flex-filter() {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  gap: 20px;
+}
+
+/* Fonts ___________________________________________________ */
+/* roboto-300 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  src: url("./fonts/roboto-v48-latin-300.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* roboto-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/roboto-v48-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* roboto-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  src: url("./fonts/roboto-v48-latin-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* roboto-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  src: url("./fonts/roboto-v48-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* roboto-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./fonts/roboto-v48-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* roboto-800 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 800;
+  src: url("./fonts/roboto-v48-latin-800.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+.font-base(@size:16px) {
+  font-family: "Roboto", sans-serif;
+  color: @text-color;
+  font-size: @size;
+  line-height: 1.6;
+}
+
+/* Basics ___________________________________________________ */
+body {
+  padding: 0px;
+  margin: 0;
+  .font-base();
+}
+
+.box-content {
+  max-width: 1200px;
+  margin: 0px auto;
+  padding: 0 30px;
+}
+/* Headerbereich ___________________________________________________ */
+.navigation {
+  .box-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    .logo {
+      padding-top: 10px;
+    }
+    nav {
+      flex-direction: row;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      li {
+        list-style-type: none;
+        a {
+          text-decoration: none;
+          color: @headline-color;
+          font-weight: 600;
+          transition: @transition;
+        }
+        &:hover > a {
+          color: @primary-color;
+          transition: @transition;
+        }
+      }
+    }
+  }
+}
+.header {
+  background: #a2a2a2 url(./resources/fabio-fistarol-1T-1xXKxyao-unsplash.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 150px 0px 30px 0px;
+
+  /* Tab Element ___________________________________________________ */
+  .tab-fly {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    .tabs {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      > input[type="radio"] {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+      }
+      .tab-labels {
+        display: flex;
+        gap: 5px;
+        input {
+          position: absolute;
+          opacity: 0;
+          z-index: -1;
+        }
+        label {
+          padding: 6px 21px;
+          font-size: 14px;
+          cursor: pointer;
+          .font-base();
+          font-size: 14px;
+          color: @light;
+          background: fade(@headline-color, 70%);
+          transition: background @transition;
+          flex: 1;
+          padding: 12px 20px;
+          letter-spacing: 0.5px;
+          position: relative;
+          display: flex;
+          flex-direction: row;
+          align-items: start;
+          &:hover {
+            background: fade(darken(@btn-color, 20%), 50%);
+          }
+          img {
+            .icon-label();
+          }
+        }
+      }
+      .tabs-contents {
+        .content {
+          display: none;
+          padding: 25px;
+          background: @light;
+          color: @text-color;
+          animation: fadeIn 0.3s ease;
+          input[type="checkbox"] {
+            position: static;
+            opacity: 1;
+            pointer-events: auto;
+            appearance: auto;
+            display: inline-block;
+          }
+          .inner-filter {
+            display: flex;
+            flex-direction: column;
+            /* Tab Inhalte ___________________________________________________ */
+
+            /* Top Filter */
+
+            .top-filter {
+              .flex-filter();
+              /* Hin- und Rückflug */
+              .flug {
+                flex-direction: row;
+                justify-content: flex-start;
+                .custom-select {
+                  position: relative;
+                  display: inline-block;
+                  .select-label {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    background: @light;
+                    border: 0px;
+                    padding: 0px;
+                    cursor: pointer;
+                    p {
+                      .font-base();
+                      margin: 0px;
+                    }
+                  }
+                  .select-options {
+                    position: absolute;
+                    top: calc(100% + 5px);
+                    left: 0;
+                    right: 0;
+                    background: @light;
+                    border: 1px solid #ccc;
+                    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                    list-style: none;
+                    margin: 0;
+                    padding: 10px;
+                    display: none;
+                    z-index: 10;
+                    li {
+                      display: flex;
+                      flex-direction: column;
+                      gap: 5px;
+                      margin-bottom: 10px;
+                      transition: @transition;
+                      cursor: pointer;
+                      font-size: 14px;
+                      &:last-child {
+                        margin-bottom: 0;
+                      }
+                      &:hover {
+                        color: @primary-color;
+                        transition: @transition;
+                      }
+                    }
+                    label {
+                      font-size: 12px;
+                      color: @text-color;
+                    }
+                  }
+                  &:focus-within {
+                    .select-options {
+                      display: block;
+                    }
+                    .arrow {
+                      transform: rotate(180deg);
+                    }
+                  }
+                }
+              }
+              div {
+                align-items: center;
+                display: flex;
+              }
+              /* Anzahl Reisende */
+              .filter {
+                gap: 5px;
+                a {
+                  text-decoration: none;
+                  align-items: center;
+                  display: flex;
+                  gap: 7px;
+                  img {
+                    width: 17px;
+                    height: 17px;
+                  }
+                  p {
+                    .font-base();
+                  }
+                }
+              }
+
+              .checkbox {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                position: relative;
+                label {
+                  position: relative;
+                  padding-left: 22px;
+                  cursor: pointer;
+                  &::before {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    top: 4px;
+                    width: 14px;
+                    height: 14px;
+                    background: #eeeeee;
+                    border: 1px solid #dddddd;
+                  }
+                  &::after {
+                    content: "";
+                    position: absolute;
+                    left: 4px;
+                    top: 9px;
+                    width: 6px;
+                    height: 2px;
+                    border-style: none none solid solid;
+                    border-color: @primary-color;
+                    transform: rotate(-45deg);
+                    opacity: 0;
+                  }
+                }
+                input[type="checkbox"] {
+                  position: absolute !important;
+                  opacity: 0 !important;
+                  cursor: pointer;
+                  visibility: hidden;
+                  width: 0px;
+                  &:checked + label::after {
+                    opacity: 1;
+                  }
+                }
+                p {
+                  margin: 0;
+                  color: @text-color;
+                }
+              }
+              .radio-miet-flug div {
+                input {
+                  margin-right: 10px;
+                }
+                label {
+                  padding-top: 5px;
+                  &:first-of-type {
+                    padding-right: 10px;
+                  }
+                }
+              }
+            }
+            /* Bottom Filter */
+
+            .bottom-filter {
+              .flex-filter();
+              flex: 1;
+              align-items: flex-end;
+              flex-wrap: wrap;
+              flex: 1;
+              div {
+                flex: 1;
+              }
+              label {
+                font-size: 12px;
+              }
+              input {
+                flex: 1;
+                &:not([type="submit"]) {
+                  padding: 10px 15px;
+                  border-radius: 0px;
+                  border: 1px solid #d1d1d1;
+                  border-width: 1px;
+                  transition: 0.3s ease-in-out @transition;
+                  &:focus {
+                    outline: none;
+                    border: 1px solid @primary-color !important;
+                    transition: @transition;
+                  }
+                  &[placeholder] {
+                    .font-base(14px);
+                  }
+                }
+              }
+              .btn-suche {
+                align-items: flex-end;
+                display: flex;
+                flex: 1;
+                input {
+                  padding: 10px 15px;
+                  border-radius: 0px;
+                  border: 0;
+                  background-color: @btn-color;
+                  color: @light;
+                  cursor: pointer;
+                  width: 100%;
+                  transition: @transition;
+                  .font-base(16px);
+                  font-weight: 600;
+                  color: #ffffff;
+                  &:hover {
+                    background-color: @btn-hover-color;
+                    transition: @transition;
+                  }
+                }
+              }
+              /* Von- nach Eingabe */
+              .von-nach-switch {
+                position: relative;
+                gap: 0;
+                input {
+                  z-index: 0;
+                }
+                /* Switch Button */
+                button {
+                  position: absolute;
+                  z-index: 1;
+                  bottom: 0px;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -5px);
+                  border-radius: 50%;
+                  border: 1px solid #d1d1d1;
+                  background-color: @light;
+                  height: 30px;
+                  width: 30px;
+                  cursor: pointer;
+                }
+              }
+              /* Datum Hin- und Rückflug*/
+              .datum,
+              .von-nach-switch {
+                gap: 5px;
+                display: flex;
+                flex-direction: row;
+                align-items: left;
+                div {
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: left;
+                  gap: 2px;
+                }
+              }
+              .top-filter {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                align-self: center;
+              }
+              /* Tab 3 */
+              .tab-content3 {
+                .inner-filter {
+                  display: flex;
+                  flex-direction: column;
+                  div {
+                    flex-direction: row;
+                    display: flex;
+                    flex: 3;
+                  }
+                  .reihe3 {
+                    p#info {
+                      font-size: 14px !important; /* greift einfach nicht */
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* aktiven Tab hell darstellen */
+#tab1:checked ~ .tab-labels label[for="tab1"],
+#tab2:checked ~ .tab-labels label[for="tab2"],
+#tab3:checked ~ .tab-labels label[for="tab3"],
+#tab4:checked ~ .tab-labels label[for="tab4"] {
+  background: @light;
+  color: @primary-color;
+  font-weight: 600;
+}
+/* passenden Content anzeigen */
+#tab1:checked ~ .tabs-contents #tab-content1,
+#tab2:checked ~ .tabs-contents #tab-content2,
+#tab3:checked ~ .tabs-contents #tab-content3,
+#tab4:checked ~ .tabs-contents #tab-content4 {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+main {
+  padding: 70px 0px;
+  section {
+    .flex-filter();
+    flex: 2;
+    gap: 20px;
+    &#flugDaten {
+      display: block;
+      .fehler {
+        padding-bottom: 60px;
+        text-align: center;
+      }
+    }
+    article {
+      border: 1px solid #dadada;
+      &#flug {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 100%;
+        margin-bottom: 50px;
+        border: 0;
+        padding: 0;
+        gap: 0;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+          rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+        #dauer {
+          display: flex;
+          flex-direction: column;
+          flex-grow: 3;
+          padding: 10px 40px;
+
+          #timeline {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            > div {
+              flex: 1;
+            }
+            #start::after {
+              content: "";
+              position: absolute;
+              bottom: 0px;
+              left: 55%;
+              width: 40%;
+              height: 1px;
+              background-color: #dadada;
+            }
+            #stop::after {
+              content: "";
+              position: absolute;
+              bottom: 26px;
+              left: 35%;
+              width: 49%;
+              height: 1px;
+              background-color: #dadada;
+            }
+            #start,
+            #stop {
+              position: relative;
+            }
+            #stop {
+              align-self: flex-end;
+              p {
+                padding: 5px 17px;
+                border-radius: 20px;
+                background-color: #e8e8e8;
+                width: fit-content;
+                font-size: 12px;
+              }
+            }
+            .zeit {
+              font-weight: 700;
+              font-size: 22px;
+              margin-bottom: 0;
+              color: @headline-color;
+            }
+            .abk {
+              margin-top: 0;
+              margin-bottom: 0;
+            }
+            #terminal {
+              margin: 0px;
+            }
+          }
+          #zeit {
+            margin-top: 0;
+          }
+          .info-time {
+            display: flex;
+            figure {
+              margin: 2px 4px 0 0;
+            }
+          }
+        }
+        .preise {
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          padding: 10px 40px 5px;
+          align-items: center;
+          justify-content: center;
+          gap: 0;
+          flex-grow: 0.1;
+          &#economy {
+            border: 2px solid rgb(65, 161, 73);
+            border-right: 0;
+            color: rgb(65, 161, 73);
+          }
+          &#business {
+            border: 2px solid rgb(31, 85, 110);
+            color: rgb(31, 85, 110);
+          }
+          p {
+            margin-bottom: 0;
+            margin-top: 5px;
+          }
+          .wert {
+            font-weight: 700;
+            font-size: 20px;
+          }
+          figure {
+            margin: 10px 0px 0px 0px;
+          }
+          .preistitel {
+            font-weight: 700;
+          }
+        }
+      }
+      .article-img {
+        aspect-ratio: 16 / 9;
+        width: 100%;
+        overflow: hidden;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+        }
+      }
+      .teaser {
+        padding: 30px;
+        .tagline {
+          margin: 0;
+          color: @headline-color;
+          font-weight: 700;
+        }
+        h3 {
+          margin: 0;
+          color: @headline-color;
+          font-size: 25px;
+          line-height: 1.3;
+        }
+        .btn-mehr {
+          padding: 10px 20px;
+          border-radius: 0px;
+          border: 0;
+          background-color: @btn-color;
+          cursor: pointer;
+          width: auto;
+          transition: @transition;
+          font-family: "Roboto", sans-serif;
+          font-size: 14px;
+          line-height: 1.6;
+          font-weight: 600;
+          color: @light;
+          letter-spacing: 1.2px;
+          &:hover {
+            background-color: @btn-hover-color;
+            transition: @transition;
+          }
+        }
+      }
+    }
+  }
+}
+/* Responsiv */
+
+@media screen and (max-width: 1100px) {
+  .header {
+    padding-top: 50px;
+  }
+  label:not([for="nonstop"]) {
+    box-sizing: initial;
+    justify-content: center;
+    p {
+      display: none;
+    }
+    img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  .navi-block {
+    display: none;
+  }
+  .bottom-filter,
+  .top-filter {
+    flex-wrap: wrap;
+    flex: 100% !important;
+    flex-direction: column !important;
+    div {
+      flex-wrap: wrap;
+      width: 100% !important;
+      flex: 100% !important;
+      flex-direction: column !important;
+      align-items: flex-start !important;
+    }
+    .von-nach-switch {
+      gap: 20px !important;
+      display: flex !important;
+      padding-top: 25px;
+      button#switch-btn {
+        rotate: (90deg);
+        transform: translate(-50%, 50%);
+        top: 63%;
+        right: 0;
+        left: unset;
+      }
+    }
+  }
+  body
+    .header
+    .tab-fly
+    .tabs
+    .tabs-contents
+    .content
+    .inner-filter
+    .bottom-filter,
+  body
+    .header
+    .tab-fly
+    .tabs
+    .tabs-contents
+    .content
+    .inner-filter
+    .top-filter {
+    flex-wrap: wrap;
+
+    div:not(.radio-miet-flug div) {
+      width: 100% !important;
+      display: flex !important;
+      flex-direction: column !important;
+    }
+
+    input:not([type="radio"]),
+    select {
+      width: 100% !important;
+      box-sizing: border-box;
+    }
+    button {
+      position: static !important;
+      align-self: left !important;
+      transform: none !important;
+    }
+    .radio-miet-flug div {
+      display: inline;
+      padding-bottom: 20px;
+    }
+  }
+  main {
+    section {
+      flex-direction: column;
+      article {
+        &#flug {
+          flex-direction: column;
+          #dauer {
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+            #timeline {
+              flex-direction: column;
+              align-items: center;
+              margin: 30px 0;
+              #start::after {
+                display: none;
+              }
+              #stop::after {
+                display: none;
+              }
+              #stop {
+                align-self: center;
+                p{
+                  margin: 30px 0;
+                }
+              }
+            }
+            .zeit {
+              margin: 0;
+            }
+          }
+          .preise#economy {
+            border-right: 2px solid rgb(65, 161, 73);
+            border-bottom: 0;
+          }
+        }
+        .teaser {
+          h3 {
+            font-size: 22px;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  body .header .tab-fly .tabs .tabs-contents .content .inner-filter {
+    .top-filter {
+      .radio-miet-flug {
+        display: flex;
+        flex-direction: row;
+      }
+    }
+    .bottom-filter .von-nach-switch {
+      flex-direction: column !important;
+      gap: 10px;
+      position: static !important;
+    }
+  }
+}

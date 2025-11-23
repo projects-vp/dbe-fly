@@ -1,0 +1,789 @@
+* {
+  box-sizing: border-box;
+}
+/* Variablen ___________________________________________________ */
+/* Fonts ___________________________________________________ */
+/* roboto-300 - latin */
+@font-face {
+  font-display: swap;
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  src: url("./fonts/roboto-v48-latin-300.woff2") format("woff2");
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* roboto-regular - latin */
+@font-face {
+  font-display: swap;
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/roboto-v48-latin-regular.woff2") format("woff2");
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* roboto-500 - latin */
+@font-face {
+  font-display: swap;
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  src: url("./fonts/roboto-v48-latin-500.woff2") format("woff2");
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* roboto-600 - latin */
+@font-face {
+  font-display: swap;
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  src: url("./fonts/roboto-v48-latin-600.woff2") format("woff2");
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* roboto-700 - latin */
+@font-face {
+  font-display: swap;
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./fonts/roboto-v48-latin-700.woff2") format("woff2");
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* roboto-800 - latin */
+@font-face {
+  font-display: swap;
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 800;
+  src: url("./fonts/roboto-v48-latin-800.woff2") format("woff2");
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* Basics ___________________________________________________ */
+body {
+  padding: 0px;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  color: #6b6760;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.box-content {
+  max-width: 1200px;
+  margin: 0px auto;
+  padding: 0 30px;
+}
+/* Headerbereich ___________________________________________________ */
+.navigation .box-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+}
+.navigation .box-content .logo {
+  padding-top: 10px;
+}
+.navigation .box-content nav {
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+.navigation .box-content nav li {
+  list-style-type: none;
+}
+.navigation .box-content nav li a {
+  text-decoration: none;
+  color: #201c1c;
+  font-weight: 600;
+  transition: 0.3s ease-in-out;
+}
+.navigation .box-content nav li:hover > a {
+  color: #1eb1b1;
+  transition: 0.3s ease-in-out;
+}
+.header {
+  background: #a2a2a2 url(./resources/fabio-fistarol-1T-1xXKxyao-unsplash.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 150px 0px 30px 0px;
+  /* Tab Element ___________________________________________________ */
+}
+.header .tab-fly {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+.header .tab-fly .tabs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.header .tab-fly .tabs > input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.header .tab-fly .tabs .tab-labels {
+  display: flex;
+  gap: 5px;
+}
+.header .tab-fly .tabs .tab-labels input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.header .tab-fly .tabs .tab-labels label {
+  padding: 6px 21px;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  color: #6b6760;
+  font-size: 16px;
+  line-height: 1.6;
+  font-size: 14px;
+  color: #ffffff;
+  background: rgba(32, 28, 28, 0.7);
+  transition: background 0.3s ease-in-out;
+  flex: 1;
+  padding: 12px 20px;
+  letter-spacing: 0.5px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+}
+.header .tab-fly .tabs .tab-labels label:hover {
+  background: rgba(0, 50, 45, 0.5);
+}
+.header .tab-fly .tabs .tab-labels label img {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+.header .tab-fly .tabs .tab-labels label img + p {
+  margin: 0;
+}
+.header .tab-fly .tabs .tabs-contents .content {
+  display: none;
+  padding: 25px;
+  background: #ffffff;
+  color: #6b6760;
+  animation: fadeIn 0.3s ease;
+}
+.header .tab-fly .tabs .tabs-contents .content input[type="checkbox"] {
+  position: static;
+  opacity: 1;
+  pointer-events: auto;
+  appearance: auto;
+  display: inline-block;
+}
+.header .tab-fly .tabs .tabs-contents .content .inner-filter {
+  display: flex;
+  flex-direction: column;
+  /* Tab Inhalte ___________________________________________________ */
+  /* Top Filter */
+  /* Bottom Filter */
+}
+.header .tab-fly .tabs .tabs-contents .content .inner-filter .top-filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  gap: 20px;
+  /* Hin- und Rückflug */
+  /* Anzahl Reisende */
+}
+.header .tab-fly .tabs .tabs-contents .content .inner-filter .top-filter .flug {
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.header .tab-fly .tabs .tabs-contents .content .inner-filter .top-filter .flug .custom-select {
+  position: relative;
+  display: inline-block;
+}
+.header .tab-fly .tabs .tabs-contents .content .inner-filter .top-filter .flug .custom-select .select-label {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  border: 0px;
+  padding: 0px;
+  cursor: pointer;
+}
+.header .tab-fly .tabs .tabs-contents .content .inner-filter .top-filter .flug .custom-select .select-label p {
+  font-family: "Roboto", sans-serif;
+  color: #6b6760;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0px;
+}
+.header .tab-fly .tabs .tabs-contents .content .inner-filter .top-filter .flug .custom-select .select-options {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  margin: 0;
+  padding: 10px;
+  display: none;
+  z-index: 10;
+}
+.header .tab-fly .tabs .tabs-contents .content .inner-filter .top-filter .flug .custom-select .select-options li {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 10px;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+  font-size: 14px;
+}
+.header .tab-fly .tabs .tabs-contents .content .inner-filter .top-filter .flug .custom-select .select-options li:last-child {
+  margin-bottom: 0;
+}
+.header .tab-fly .tabs .tabs-contents .content .inner-filter .top-filter .flug .custom-select .select-options li:hover {
+  color: #1eb1b1;
+  transition: 0.3s ease-in-out;
+}
+.header .tab-fly .tabs .tabs-contents .content .inner-filter .top-filter .flug .custom-select .select-options label {
+  font-size: 12px;
+  color: #6b6760;
+}
+.header .tab-fly .tabs .tabs-contents .content .inner-filter .top-filter .flug .custom-select:focus-within .select-options {
+  display: block;
+}
+.header .tab-fly .tabs .tabs-contents .content .inner-filter .top-filter .flug .custom-select:focus-within .arrow {
+  transform: rotate(180deg);
+}
+.header .tab-fly .tabs .tabs-contents .content .inner-filter .top-filter div {
+  align-items: center;
+  display: flex;
+}
+.header .tab-fly .tabs .tabs-contents .content .inner-filter .top-filter .filter {
+  gap: 5px;
+}
+.header .tab-fly .tabs .tabs-contents .content .inner-filter .top-filter .filter a {
+  text-decoration: none;
+  align-items: center;
+  display: flex;
+  gap: 7px;
+}
+.header .tab-fly .tabs .tabs-contents .content .inner-filter .top-filter .filter a img {
+  width: 17px;
+  height: 17px;
+}
+.header .tab-fly .tabs .tabs-contents .content .inner-filter .top-filter .filter a p {
+  font-family: "Roboto", sans-serif;
+  color: #6b6760;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.header .tab-fly .tabs .tabs-contents .content .inner-filter .top-filter .checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+}
+.header .tab-fly .tabs .tabs-contents .content .inner-filter .top-filter .checkbox label {
+  position: relative;
+  padding-left: 22px;
+  cursor: pointer;
+}
+.header .tab-fly .tabs .tabs-contents .content .inner-filter .top-filter .checkbox label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 14px;
+  height: 14px;
+  background: #eeeeee;
+  border: 1px solid #dddddd;
+}
+.header .tab-fly .tabs .tabs-contents .content .inner-filter .top-filter .checkbox label::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 9px;
+  width: 6px;
+  height: 2px;
+  border-style: none none solid solid;
+  border-color: #1eb1b1;
+  transform: rotate(-45deg);
+  opacity: 0;
+}
+.header .tab-fly .tabs .tabs-contents .content .inner-filter .top-filter .checkbox input[type="checkbox"] {
+  position: absolute !important;
+  opacity: 0 !important;
+  cursor: pointer;
+  visibility: hidden;
+  width: 0px;
+}
+.header .tab-fly .tabs .tabs-contents .content .inner-filter .top-filter .checkbox input[type="checkbox"]:checked + label::after {
+  opacity: 1;
+}
+.header .tab-fly .tabs .tabs-contents .content .inner-filter .top-filter .checkbox p {
+  margin: 0;
+  color: #6b6760;
+}
+.header .tab-fly .tabs .tabs-contents .content .inner-filter .top-filter .radio-miet-flug div input {
+  margin-right: 10px;
+}
+.header .tab-fly .tabs .tabs-contents .content .inner-filter .top-filter .radio-miet-flug div label {
+  padding-top: 5px;
+}
+.header .tab-fly .tabs .tabs-contents .content .inner-filter .top-filter .radio-miet-flug div label:first-of-type {
+  padding-right: 10px;
+}
+.header .tab-fly .tabs .tabs-contents .content .inner-filter .bottom-filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  gap: 20px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  flex: 1;
+  /* Von- nach Eingabe */
+  /* Datum Hin- und Rückflug*/
+  /* Tab 3 */
+}
+.header .tab-fly .tabs .tabs-contents .content .inner-filter .bottom-filter div {
+  flex: 1;
+}
+.header .tab-fly .tabs .tabs-contents .content .inner-filter .bottom-filter label {
+  font-size: 12px;
+}
+.header .tab-fly .tabs .tabs-contents .content .inner-filter .bottom-filter input {
+  flex: 1;
+}
+.header .tab-fly .tabs .tabs-contents .content .inner-filter .bottom-filter input:not([type="submit"]) {
+  padding: 10px 15px;
+  border-radius: 0px;
+  border: 1px solid #d1d1d1;
+  border-width: 1px;
+  transition: 0.3s ease-in-out 0.3s ease-in-out;
+}
+.header .tab-fly .tabs .tabs-contents .content .inner-filter .bottom-filter input:not([type="submit"]):focus {
+  outline: none;
+  border: 1px solid #1eb1b1 !important;
+  transition: 0.3s ease-in-out;
+}
+.header .tab-fly .tabs .tabs-contents .content .inner-filter .bottom-filter input:not([type="submit"])[placeholder] {
+  font-family: "Roboto", sans-serif;
+  color: #6b6760;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.header .tab-fly .tabs .tabs-contents .content .inner-filter .bottom-filter .btn-suche {
+  align-items: flex-end;
+  display: flex;
+  flex: 1;
+}
+.header .tab-fly .tabs .tabs-contents .content .inner-filter .bottom-filter .btn-suche input {
+  padding: 10px 15px;
+  border-radius: 0px;
+  border: 0;
+  background-color: #019788;
+  cursor: pointer;
+  width: 100%;
+  transition: 0.3s ease-in-out;
+  font-family: "Roboto", sans-serif;
+  color: #6b6760;
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 600;
+  color: #ffffff;
+}
+.header .tab-fly .tabs .tabs-contents .content .inner-filter .bottom-filter .btn-suche input:hover {
+  background-color: #027c70;
+  transition: 0.3s ease-in-out;
+}
+.header .tab-fly .tabs .tabs-contents .content .inner-filter .bottom-filter .von-nach-switch {
+  position: relative;
+  gap: 0;
+  /* Switch Button */
+}
+.header .tab-fly .tabs .tabs-contents .content .inner-filter .bottom-filter .von-nach-switch input {
+  z-index: 0;
+}
+.header .tab-fly .tabs .tabs-contents .content .inner-filter .bottom-filter .von-nach-switch button {
+  position: absolute;
+  z-index: 1;
+  bottom: 0px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -5px);
+  border-radius: 50%;
+  border: 1px solid #d1d1d1;
+  background-color: #ffffff;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+}
+.header .tab-fly .tabs .tabs-contents .content .inner-filter .bottom-filter .datum,
+.header .tab-fly .tabs .tabs-contents .content .inner-filter .bottom-filter .von-nach-switch {
+  gap: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+}
+.header .tab-fly .tabs .tabs-contents .content .inner-filter .bottom-filter .datum div,
+.header .tab-fly .tabs .tabs-contents .content .inner-filter .bottom-filter .von-nach-switch div {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  gap: 2px;
+}
+.header .tab-fly .tabs .tabs-contents .content .inner-filter .bottom-filter .top-filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+}
+.header .tab-fly .tabs .tabs-contents .content .inner-filter .bottom-filter .tab-content3 .inner-filter {
+  display: flex;
+  flex-direction: column;
+}
+.header .tab-fly .tabs .tabs-contents .content .inner-filter .bottom-filter .tab-content3 .inner-filter div {
+  flex-direction: row;
+  display: flex;
+  flex: 3;
+}
+.header .tab-fly .tabs .tabs-contents .content .inner-filter .bottom-filter .tab-content3 .inner-filter .reihe3 p#info {
+  font-size: 14px !important;
+  /* greift einfach nicht */
+}
+/* aktiven Tab hell darstellen */
+#tab1:checked ~ .tab-labels label[for="tab1"],
+#tab2:checked ~ .tab-labels label[for="tab2"],
+#tab3:checked ~ .tab-labels label[for="tab3"],
+#tab4:checked ~ .tab-labels label[for="tab4"] {
+  background: #ffffff;
+  color: #1eb1b1;
+  font-weight: 600;
+}
+/* passenden Content anzeigen */
+#tab1:checked ~ .tabs-contents #tab-content1,
+#tab2:checked ~ .tabs-contents #tab-content2,
+#tab3:checked ~ .tabs-contents #tab-content3,
+#tab4:checked ~ .tabs-contents #tab-content4 {
+  display: block;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+main {
+  padding: 70px 0px;
+}
+main section {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  flex: 2;
+  gap: 20px;
+}
+main section#flugDaten {
+  display: block;
+}
+main section#flugDaten .fehler {
+  padding-bottom: 60px;
+  text-align: center;
+}
+main section article {
+  border: 1px solid #dadada;
+}
+main section article#flug {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-bottom: 50px;
+  border: 0;
+  padding: 0;
+  gap: 0;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+main section article#flug #dauer {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 3;
+  padding: 10px 40px;
+}
+main section article#flug #dauer #timeline {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+main section article#flug #dauer #timeline > div {
+  flex: 1;
+}
+main section article#flug #dauer #timeline #start::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 55%;
+  width: 40%;
+  height: 1px;
+  background-color: #dadada;
+}
+main section article#flug #dauer #timeline #stop::after {
+  content: "";
+  position: absolute;
+  bottom: 26px;
+  left: 35%;
+  width: 49%;
+  height: 1px;
+  background-color: #dadada;
+}
+main section article#flug #dauer #timeline #start,
+main section article#flug #dauer #timeline #stop {
+  position: relative;
+}
+main section article#flug #dauer #timeline #stop {
+  align-self: flex-end;
+}
+main section article#flug #dauer #timeline #stop p {
+  padding: 5px 17px;
+  border-radius: 20px;
+  background-color: #e8e8e8;
+  width: fit-content;
+  font-size: 12px;
+}
+main section article#flug #dauer #timeline .zeit {
+  font-weight: 700;
+  font-size: 22px;
+  margin-bottom: 0;
+  color: #201c1c;
+}
+main section article#flug #dauer #timeline .abk {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+main section article#flug #dauer #timeline #terminal {
+  margin: 0px;
+}
+main section article#flug #dauer #zeit {
+  margin-top: 0;
+}
+main section article#flug #dauer .info-time {
+  display: flex;
+}
+main section article#flug #dauer .info-time figure {
+  margin: 2px 4px 0 0;
+}
+main section article#flug .preise {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 10px 40px 5px;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  flex-grow: 0.1;
+}
+main section article#flug .preise#economy {
+  border: 2px solid #41a149;
+  border-right: 0;
+  color: #41a149;
+}
+main section article#flug .preise#business {
+  border: 2px solid #1f556e;
+  color: #1f556e;
+}
+main section article#flug .preise p {
+  margin-bottom: 0;
+  margin-top: 5px;
+}
+main section article#flug .preise .wert {
+  font-weight: 700;
+  font-size: 20px;
+}
+main section article#flug .preise figure {
+  margin: 10px 0px 0px 0px;
+}
+main section article#flug .preise .preistitel {
+  font-weight: 700;
+}
+main section article .article-img {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  overflow: hidden;
+}
+main section article .article-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+main section article .teaser {
+  padding: 30px;
+}
+main section article .teaser .tagline {
+  margin: 0;
+  color: #201c1c;
+  font-weight: 700;
+}
+main section article .teaser h3 {
+  margin: 0;
+  color: #201c1c;
+  font-size: 25px;
+  line-height: 1.3;
+}
+main section article .teaser .btn-mehr {
+  padding: 10px 20px;
+  border-radius: 0px;
+  border: 0;
+  background-color: #019788;
+  cursor: pointer;
+  width: auto;
+  transition: 0.3s ease-in-out;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 1.2px;
+}
+main section article .teaser .btn-mehr:hover {
+  background-color: #027c70;
+  transition: 0.3s ease-in-out;
+}
+/* Responsiv */
+@media screen and (max-width: 1100px) {
+  .header {
+    padding-top: 50px;
+  }
+  label:not([for="nonstop"]) {
+    box-sizing: initial;
+    justify-content: center;
+  }
+  label:not([for="nonstop"]) p {
+    display: none;
+  }
+  label:not([for="nonstop"]) img {
+    width: 40px;
+    height: 40px;
+  }
+  .navi-block {
+    display: none;
+  }
+  .bottom-filter,
+  .top-filter {
+    flex-wrap: wrap;
+    flex: 100% !important;
+    flex-direction: column !important;
+  }
+  .bottom-filter div,
+  .top-filter div {
+    flex-wrap: wrap;
+    width: 100% !important;
+    flex: 100% !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+  .bottom-filter .von-nach-switch,
+  .top-filter .von-nach-switch {
+    gap: 20px !important;
+    display: flex !important;
+    padding-top: 25px;
+  }
+  .bottom-filter .von-nach-switch button#switch-btn,
+  .top-filter .von-nach-switch button#switch-btn {
+    rotate: 90deg;
+    transform: translate(-50%, 50%);
+    top: 63%;
+    right: 0;
+    left: unset;
+  }
+  body .header .tab-fly .tabs .tabs-contents .content .inner-filter .bottom-filter,
+  body .header .tab-fly .tabs .tabs-contents .content .inner-filter .top-filter {
+    flex-wrap: wrap;
+  }
+  body .header .tab-fly .tabs .tabs-contents .content .inner-filter .bottom-filter div:not(.radio-miet-flug div),
+  body .header .tab-fly .tabs .tabs-contents .content .inner-filter .top-filter div:not(.radio-miet-flug div) {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  body .header .tab-fly .tabs .tabs-contents .content .inner-filter .bottom-filter input:not([type="radio"]),
+  body .header .tab-fly .tabs .tabs-contents .content .inner-filter .top-filter input:not([type="radio"]),
+  body .header .tab-fly .tabs .tabs-contents .content .inner-filter .bottom-filter select,
+  body .header .tab-fly .tabs .tabs-contents .content .inner-filter .top-filter select {
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+  body .header .tab-fly .tabs .tabs-contents .content .inner-filter .bottom-filter button,
+  body .header .tab-fly .tabs .tabs-contents .content .inner-filter .top-filter button {
+    position: static !important;
+    align-self: left !important;
+    transform: none !important;
+  }
+  body .header .tab-fly .tabs .tabs-contents .content .inner-filter .bottom-filter .radio-miet-flug div,
+  body .header .tab-fly .tabs .tabs-contents .content .inner-filter .top-filter .radio-miet-flug div {
+    display: inline;
+    padding-bottom: 20px;
+  }
+  main section {
+    flex-direction: column;
+  }
+  main section article#flug {
+    flex-direction: column;
+  }
+  main section article#flug #dauer {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  main section article#flug #dauer #timeline {
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 0;
+  }
+  main section article#flug #dauer #timeline #start::after {
+    display: none;
+  }
+  main section article#flug #dauer #timeline #stop::after {
+    display: none;
+  }
+  main section article#flug #dauer #timeline #stop {
+    align-self: center;
+  }
+  main section article#flug #dauer #timeline #stop p {
+    margin: 30px 0;
+  }
+  main section article#flug #dauer .zeit {
+    margin: 0;
+  }
+  main section article#flug .preise#economy {
+    border-right: 2px solid #41a149;
+    border-bottom: 0;
+  }
+  main section article .teaser h3 {
+    font-size: 22px;
+  }
+}
+@media screen and (max-width: 500px) {
+  body .header .tab-fly .tabs .tabs-contents .content .inner-filter .top-filter .radio-miet-flug {
+    display: flex;
+    flex-direction: row;
+  }
+  body .header .tab-fly .tabs .tabs-contents .content .inner-filter .bottom-filter .von-nach-switch {
+    flex-direction: column !important;
+    gap: 10px;
+    position: static !important;
+  }
+}
